@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="Icons/brain.png" type="image/x-icon" />
+  <title>Home</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Convergence&display=swap');
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <script src="https://kit.fontawesome.com/d362cfdaed.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      list-style: none;
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: #f5f6fa;
+    }
+
+    .wrapper .sidebar {
+      background: rgb(5, 68, 104);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 225px;
+      height: 100%;
+      padding: 20px 0;
+      transition: all 0.5s ease;
+    }
+
+    #home {
+      width: calc(100% - 225px);
+      margin-left: 225px;
+      transition: all 0.5s ease;
+    }
+
+    body.active .wrapper .sidebar {
+      left: -225px;
+    }
+
+    body.active #home {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    .wrapper #out_btn {
+      position: absolute;
+      top: 93%;
+      left: 60%;
+    }
+
+    .wrapper .sidebar ul li a {
+      display: block;
+      padding: 13px 30px;
+      border-bottom: 1px solid #10558d;
+      color: rgb(241, 237, 237);
+      font-size: 16px;
+      position: relative;
+    }
+
+    .wrapper .sidebar ul li a .icon {
+      color: #dee4ec;
+      width: 30px;
+      display: inline-block;
+    }
+
+    .wrapper .sidebar ul li a:hover,
+    .wrapper .sidebar ul li a.active {
+      color: #0c7db1;
+
+      background: white;
+      border-right: 2px solid rgb(5, 68, 104);
+    }
+
+    .wrapper .sidebar ul li a:hover .icon,
+    .wrapper .sidebar ul li a.active .icon {
+      color: #0c7db1;
+    }
+
+    .wrapper .sidebar ul li a:hover:before,
+    .wrapper .sidebar ul li a.active:before {
+      display: block;
+    }
+
+    /* homepage */
+
+    #main_img,
+    #AI_img {
+      position: relative;
+    }
+
+    #img_btn {
+      position: absolute;
+      top: 70%;
+      left: 45%;
+    }
+
+    .Q_cards {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #img_inp {
+      position: absolute;
+      top: 67%;
+      left: 55%;
+      width: 20%;
+    }
+
+    #img_btn1 {
+      position: absolute;
+      top: 67%;
+      left: 78%;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!--sidebar-->
+
+  <div class="wrapper">
+    <!--Top menu -->
+    <div class="sidebar">
+      <!--profile image & text-->
+      <div class="profile">
+
+        <h7 id="user" class="message" style="color: #ffffff;
+        margin: 10px 0 5px;"></h7>
+      </div>
+      <!--menu item-->
+      <ul>
+        <li>
+          <a href="#" class="active">
+            <span class="icon"><i class="fa-solid fa-house"></i></span>
+            <span class="item">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="icon"><i class="fas fa-desktop"></i></span>
+            <span class="item">My Dashboard</span>
+          </a>
+        </li>
+
+      </ul>
+
+      <button id="out_btn" type="button" class="btn btn-primary">Logout</button>
+    </div>
+
+  </div>
+
+  <!--navbar-->
+  <section id="home">
+    <nav id="navbar" class="navbar bg-body-primary bg-light px-3">
+      <div class="hamburger">
+        <button type="button" class="btn btn-primary">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a class="navbar-brand" href="#">Navbar</a>
+      </div>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#scrollspyHeading1">First</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#scrollspyHeading2">Second</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+            aria-expanded="false">Dropdown</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+            <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="main_img">
+      <video autoplay muted height="auto" width="100%">
+        <source src="Icons/Quiz App.mp4" type="video/mp4">
+      </video>
+      <div>
+        <a id="img_btn" class="btn btn-primary btn-lg" href="#scrollspyHeading1" role="button">Get Started</a>
+      </div>
+    </div>
+
+
+
+    <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+      data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+
+      <div id="scrollspyHeading1">
+        <h4>Category</h4>
+        <div class="Q_cards">
+          <div class="card text-center mb-3 mr-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Test quiz</h5>
+              <p class="card-text">Click below to start!</p>
+              <a href="questionProg.js" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card text-center mb-3 mr-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="questionVerbal.js" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <div class="card text-center mb-3 mr-3" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="questionAppti.js" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="scrollspyHeading2">
+        <h4>Second heading</h4>
+        <div id="AI_img">
+          <video autoplay loop="loop" muted height="auto" width="100%">
+            <source src="Icons/AI.mp4" type="video/mp4">
+          </video>
+          <input type="text" placeholder="Your personalized topic" id="img_inp" class="form-control" />
+          <div>
+            <button id="img_btn1" type="button" class="btn btn-primary">Start</button>
+          </div>
+        </div>
+      </div>
+      <h4 id="scrollspyHeading3">Third heading</h4>
+      <p>...</p>
+      <h4 id="scrollspyHeading4">Fourth heading</h4>
+      <p>...</p>
+      <h4 id="scrollspyHeading5">Fifth heading</h4>
+      <p>...</p>
+    </div>
+
+
+
+    <!-- <form class="form-inline my-2 my-lg-0">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a id="userlink" class="nav-link" href="">Username</a>
+      </li>
+      <li class="nav-item">
+        <a id="signoutlink" class="nav-link" href="">Sign Out</a>
+      </li>
+    </ul>
+  </form> -->
+
+    <!------------------------------------------------------------------------------------------------------------------------------------->
+
+  </section>
+
+  <!--------------------------------script------------------------------------------------------------------------------------------------>
+
+  <script type="module">
+
+    // -------------------------------Firebase configuration----------------------------------//
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+
+    import {
+      getAuth,
+      onAuthStateChanged,
+      signInWithEmailAndPassword,
+      sendPasswordResetEmail,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+
+    // Web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBODwSzpJvyU6DJSkgMqimtGrjd3rtc4HE",
+      authDomain: "quizdb-639e8.firebaseapp.com",
+      databaseURL: "https://quizdb-639e8-default-rtdb.firebaseio.com",
+      projectId: "quizdb-639e8",
+      storageBucket: "quizdb-639e8.appspot.com",
+      messagingSenderId: "363980400085",
+      appId: "1:363980400085:web:72bf87fbccaa543b45495c",
+    };
+
+    // Initialize Firebase
+    export const app = initializeApp(firebaseConfig);
+    // Initialize variables
+    export const auth = getAuth()
+
+    //------------------------------References-------------------------------------------------//
+
+    const logout_btn = document.getElementById("out_btn")
+
+    //------------------------assign events----------------------------------------//
+
+    logout_btn.addEventListener('click', logout)
+
+    //-----------------------Checked if loged in (compulsary)-----------------------------------//
+
+    onAuthStateChanged(auth, (user) => {
+      if (!user) {
+        location.replace("login.html")
+      }
+      else {
+        document.getElementById("user").innerHTML = "Account: " + user.email                  //user email display
+      }
+    });
+
+    //------------------------------logout botton----------------------------------------------//
+
+    function logout() {
+      signOut(auth).then(() => {
+        alert("signout sucessful")
+      }).catch((error) => {
+        alert("error" + error)
+      });
+    }
+
+    //---------------------------------homepage script-------------------------------------------//
+
+    var hamburger = document.querySelector(".hamburger");
+    hamburger.addEventListener("click", function () {
+      document.querySelector("body").classList.toggle("active");
+    })
+
+
+  </script>
+</body>
+
+</html>
